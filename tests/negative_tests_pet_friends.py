@@ -115,7 +115,7 @@ def test_update_my_pet_info_with_invalid_data(new_name='', new_animal_type='', n
 
 
 def test_update_my_pet_info_with_invalid_key(new_name='hamster1',
-                                                    new_animal_type='hamster', new_age='3'):
+                                                    new_animal_type='hamster', new_age=3):
     _, auth_key = pf.get_api_key(valid_email, valid_password)
     _, my_pets = pf.get_list_of_pets(auth_key, filter='my_pets')
     if len(my_pets['pets']) == 0:
