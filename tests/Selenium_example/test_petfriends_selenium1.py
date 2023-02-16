@@ -81,5 +81,3 @@ def test_all_cards_of_pets():
       assert 0 not in check_ages
    except AssertionError as e:
       print('Не все карточки имеют описание с возрастом.')
-
-

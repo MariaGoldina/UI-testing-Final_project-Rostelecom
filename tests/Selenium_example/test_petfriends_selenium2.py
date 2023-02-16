@@ -100,4 +100,3 @@ class TestMyPetsTable:
       pets = {i:(names[i-1], breeds[i-1], ages[i-1]) for i in range(1, total_count+1)}
       unique_pets = set(pets.values())
       assert len(pets.values()) == len(unique_pets)
-
