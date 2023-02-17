@@ -6,8 +6,8 @@ from selenium.webdriver.common.by import By
 
 # Фикстура для загрузки сайта в браузере и последующего выхода из браузера
 @pytest.fixture(autouse=True)
-def testing():
-   pytest.driver = selenium.webdriver.Chrome("D:\Education\PyCharmProjects\SF_tasks\AuthTesting\\tests\Selenium_example\chromedriver.exe")
+def testing1():
+   pytest.driver = selenium.webdriver.Chrome("/tests/Selenium_example/chromedriver.exe")
    pytest.driver.implicitly_wait(10)
    pytest.driver.get("http://petfriends.skillfactory.ru/login")
 
@@ -23,12 +23,10 @@ def testing():
    pytest.driver.quit()
 
 
-def test_show_all_cards_of_pets():
+def test_all_cards_of_pets():
    # Проверяем, что мы оказались на главной странице пользователя
    assert pytest.driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
 
-
-def test_all_cards_of_pets():
    # Выбираем все фото, имена, описания с породой и возрастом из карточек питомцев
    images = pytest.driver.find_elements(By.CSS_SELECTOR, ".card-img-top")
    names = pytest.driver.find_elements(By.CSS_SELECTOR, ".card-title")
