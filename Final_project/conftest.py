@@ -28,7 +28,7 @@ def pytest_runtest_makereport(item, call):
     return rep
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def web_browser():
     browser = webdriver.Chrome(executable_path="./chromedriver.exe")
 
